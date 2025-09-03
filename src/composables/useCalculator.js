@@ -204,7 +204,7 @@ export class useCalculator {
  * @param {*} decimals
  * @returns
  */
-function precise(value, decimals = 14) {
+function precise(value, decimals = 12) {
     if (typeof value !== 'number') return value;
 
     // 将数字放大为整数进行计算，避免浮点误差
