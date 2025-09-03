@@ -20,6 +20,13 @@
     let item = 0;
     let input = 0;
 
+    if (localStorage.getItem('history')) {
+        history.value = JSON.parse(localStorage.getItem('history'));
+        item = 1;
+        emit('send-data', { putoutP, putoutInputChar, history, isHistory, item, input });
+        item = 0;
+    }
+
     // 点击触发事件并将数据传递给父组件
     document.addEventListener('DOMContentLoaded', function () {
         // 为按钮绑定事件（假设按钮有相应的类或ID）
@@ -47,6 +54,7 @@
                         history.value = history.value.slice(0, history.value.length - props.receivedData.historyItem.value);
                     }
                     item = 1;
+                    localStorage.setItem('history', JSON.stringify(history.value));
                     emit('send-data', { putoutP, putoutInputChar, history, isHistory, item, input });
                     item = 0;
                 } else {
@@ -77,9 +85,12 @@
 
     watch(() => props.receivedData.putoutInput.value, () => {
         if (props.receivedData.putoutInput.value !== 0) {
+            for (let i = 0; i < putoutInput.value.length; i++) {
+                calculator.handleBackspace();
+            }
             calculator.appendNumber(props.receivedData.putoutInput.value);
             input = 1;
-            emit('send-data', { putoutP, putoutInputChar, history, isHistory, item });
+            emit('send-data', { putoutP, putoutInputChar, history, isHistory, item, input });
             input = 0;
         }
     })
