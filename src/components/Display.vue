@@ -26,7 +26,7 @@
     #putout_p {
         width: 100%;   /* 全宽 */
         height: 40px;  /* 高度 */
-        line-height: 20px;  /* 行高 */
+        line-height: 30px;  /* 行高 */
         font-size: 17px;  /* 字体大小 */
         color: #c7c7c7;  /* 灰色文字 */
         text-align: right;  /* 文字右对齐 */
