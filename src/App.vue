@@ -72,6 +72,7 @@
         isHistory.value = !isHistory.value;
         backData.historyItem.value += sharedData.history.value.length;
         sharedData.history.value = [];
+        localStorage.removeItem('history');
     }
 
     function clickHistory(item) {
@@ -221,6 +222,9 @@
     #history_btn {
         width: 100%;   /* 全宽 */
         height: 40px;   /* 高度 */
+        display: flex;  /* 弹性布局 */
+        flex-wrap: nowrap;  /* 不换行 */
+        justify-content: space-between;  /* 两端对齐 */
     }
 
     #history_btn button {
@@ -274,8 +278,7 @@
         border: #fff 1px solid;  /* 白色边框 */
         box-sizing: border-box; /* 盒模型设置 */
         border-radius: 20px;  /* 圆角边框 */
-        position: relative; /* 相对定位 */
-        top: 20px;  /* 向下偏移 */
+        margin-top: 20px;  /* 上外边距 */
         color: #fff;  /* 白色文字 */
         font-size: 14px;  /* 字体大小 */
         padding: 15px;  /* 内边距 */
