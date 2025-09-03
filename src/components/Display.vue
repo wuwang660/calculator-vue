@@ -41,7 +41,7 @@
         border: none;  /* 无边框 */
         font-size: 42px;  /* 字体大小 */
         font-weight: 500;  /* 字体粗细 */
-        line-height: 30px;  /* 行高 */
+        line-height: 35px;  /* 行高 */
         color: #fff;  /* 白色文字 */
         background-color: rgba(255, 255, 255, 0);  /* 透明背景 */
         border-radius: 10px;  /* 圆角边框 */
