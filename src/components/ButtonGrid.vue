@@ -87,6 +87,7 @@
         if (props.receivedData.putoutInput.value !== 0) {
             calculator.judgeOp.value = 1;
             calculator.appendNumber(props.receivedData.putoutInput.value);
+            calculator.judgeOp.value = 1;
             input = 1;
             emit('send-data', { putoutP, putoutInputChar, history, isHistory, item, input });
             input = 0;
