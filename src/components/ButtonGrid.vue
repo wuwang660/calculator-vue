@@ -85,9 +85,7 @@
 
     watch(() => props.receivedData.putoutInput.value, () => {
         if (props.receivedData.putoutInput.value !== 0) {
-            for (let i = 0; i < putoutInput.value.length; i++) {
-                calculator.handleBackspace();
-            }
+            calculator.judgeOp.value = 1;
             calculator.appendNumber(props.receivedData.putoutInput.value);
             input = 1;
             emit('send-data', { putoutP, putoutInputChar, history, isHistory, item, input });
